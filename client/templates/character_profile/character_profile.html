@@ -1,0 +1,28 @@
+<template name="characterProfile">
+	<h1>{{name}}'s Base Attributes</h1>
+	<div class="row">
+		<div class="col-md-6">
+			<table class="table" id="ability-scores">
+				<tr id="ability-scores-tiltes">
+					<th>Ability Name</th>
+					<th>Ability Score</th>
+					<th>Ability Modifier</th>
+					<th>Temp Adjusment</th>
+					<th>Temp Modifier</th>
+				</tr>
+				<tr>
+					<th>STR</th>
+					<td><input id="str" placeholder="{{str.score}}"></td>
+					<td id="srtModifier">+5</td>
+					<td><input id="strTemp"></td>
+					<td id="strTempModifier"> -1</td>
+				</tr>
+
+				
+			</table>
+			<button id="saveCharacter">Save</button>
+		</div>
+		<div class="col-md-6">
+		</div>
+	</div>
+</template>
