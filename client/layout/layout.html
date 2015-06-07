@@ -22,7 +22,9 @@
 
       {{#if currentUser}}
         <li><a href="" id="logout-btn" >Logout</a></li>
-        {{/if}}
+      {{else}}
+
+      
 
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Sign in<span class="caret"></span></a>
@@ -44,12 +46,17 @@
             {{/if}}
           </ul>
         </li>
-      </ul>
+      {{/if}}</ul>
+
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid --></nav>
 	<div class="consoleLog"><h1>{{consoleLog}}</h1></div>
   <div class="container">
 		{{>yield}}
 	</div> <!-- end .container -->
-
+<div class="panel-footer">
+  <div class="row">
+    <div class="col-sm-12"><p>Created by: julioRonnieCliff.(espa~ol)</p></div>
+  </div>
+</div>
 </template>

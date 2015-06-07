@@ -1,31 +1,33 @@
 <template name="characters"> 
-<div class="row">
-		<div class="col-md-4"></div>
-		<div class="col-md-4">
-
-			<form>
+	<div class="row">
+		<form>
+			<div class="col-md-4">
 				<input type="text" id="character-name" class="form-control col-md-4" placeholder="Character Name" required autofocus>
-
-				<button class="btn btn-sm btn-primary btn-block" id="save-btn" type="submit">Add a new Charracter !</button>
-			</form> 
-			
-		</div>
-	<div class="col-md-4"></div>
+			</div>
+			<div class="col-md-4">
+				<input type="text" id="character-class" class="form-control col-md-4" placeholder="Character Class" >
+			</div>
+			<div class="col-md-4"><input type="text" id="character-race" class="form-control col-md-4" placeholder="Character Race" ></div>
+		</form> 
 	</div> <!-- end of .row -->
 	<div class="row">
-		<div class="col-md-4">
-			{{#each characters}}
-			<div class="container">
-				<div class="row character">{{> character}}
-				</div>
+			<div class="col-md-4"></div>
+			<div class="col-md-4"><button class="btn btn-sm btn-primary btn-block" id="save-btn" type="submit">Save Character</button>
 			</div>
-			{{/each}}
+			<div class="col-md-4"></div>
+			</div>
+	<div class="row">
+		{{#each characters}}
+		<div class="col-md-12 character">
+			{{> character}}
 		</div>
+		{{/each}}
 	</div><!-- end of .row -->
 
 </template>
 <template name ="character"> 
+
 	<div class="col-md-4"><h3>Character Name: {{name}}</h3></div>
-	<div class="col-md-4"><h3>ID: {{_id}}</h3></div>
 	<div class="col-md-4"><h3>Class: {{class}}</h3></div>
+	<div class="col-md-4"><h3>Race: {{race}}</h3></div>
 </template>

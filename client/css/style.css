@@ -9,12 +9,7 @@
 input{
 	background-color: rgb(250, 255, 189) !important;
 }
-.character{
-	background-color: black;
-	padding: 5px;
-	text-align: center;
-	margin-top: 20px;
-}
+
 .navbar {
 	margin-bottom: 0px;
 }
@@ -41,4 +36,38 @@ a:hover {
 } 
 #ability-scores-tiltes th{
 	font-size: 1.5em;
+}
+
+.character{
+	background-color: black;
+	padding: 5px;
+	text-align: center;
+	margin-top: 20px;
+	transition: background-color .5s;
+	transition: color .5s;
+
+}
+
+.character:hover {
+	color: black;
+	background-color: green;
+	cursor: pointer;
+}
+
+.panel-footer{
+	position: fixed;
+	height: 60px;
+	bottom: 0;
+	width: 100%;
+	background-color: black;
+	text-align: center;
+	transition: font-size .7s, font-style .7s, background-color .7s, letter-spacing 1.2s;
+}
+
+.panel-footer:hover{
+	background-color: green;
+	color: black;
+	font-style: bold;
+	font-size: 2em;
+	letter-spacing: .8em;
 }

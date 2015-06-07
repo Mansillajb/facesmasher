@@ -2,13 +2,18 @@ Template.characters.events({
 	"click #save-btn":function (event, template){
 		event.preventDefault();
 		var characterName = template.find("#character-name").value
+		var characterClass = template.find("#character-class").value
+		var characterRace = template.find("#character-race").value
 		console.log("Yea im saving some shit (By shit I mean: " + characterName + ".) for you bro.");
 		
 		//OPTION 1
 		//empty character object
 		var newCharacter = {};
 		//add properties
+		newCharacter["owner"] = Meteor.userId();
 		newCharacter["name"] = characterName;
+		newCharacter["race"] = characterRace;
+		newCharacter["class"] = characterClass;
 		
 		//OPTION 2
 		// {
@@ -16,6 +21,11 @@ Template.characters.events({
 		// }
 
 		Characters.insert(newCharacter);
+		template.find("#character-name").value="";
+		template.find("#character-class").value="";
+		template.find("#character-race").value="";
+		template.find("character-name").focus();
+
 		console.log("From Database BELOW");
 		
 		//fetch()[0]["name"] 
@@ -30,7 +40,10 @@ Template.characters.events({
 
 Template.characters.helpers({
 	'characters':function(){
-		return Characters.find();
+		//get our id
+		var myId = Meteor.userId();
+
+		return Characters.find({ "owner": myId });
 	}
 });
 
