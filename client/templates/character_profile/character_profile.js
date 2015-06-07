@@ -1,4 +1,10 @@
 Template.characterProfile.events({
+	"click table":function () {
+		
+		$("input").each(function () {
+			$(this).attr("value", 5);
+		});
+	},
 	"click #saveCharacter":function (event, template){
 
 		// Ability Scores
@@ -36,7 +42,7 @@ Template.characterProfile.events({
 				score:dexterity,
 				bonus:dexterityBonus,
 				temp:dexterityTemp
-			}
+			},
 			CON:{
 				score:constitution,
 				bonus:constitutionBonus,
@@ -59,10 +65,10 @@ Template.characterProfile.events({
 			}
 		};
 
+		console.log(abilities);
 		
 		console.log( "Pushing it real good " + Meteor.user().username );
 		Characters.update( this._id, { $set:{ abilities:abilities } } );
-		template.find( "#str" ).value="";
 	}
 });
 

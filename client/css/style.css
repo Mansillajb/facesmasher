@@ -24,6 +24,10 @@ input{
 
 }
 
+th{
+	font-size: 1.2em;
+}
+
 a {
 	
 	transition: color .7s;
