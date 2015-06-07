@@ -1,4 +1,4 @@
-/*.dropdown-menu{
+.dropdown-menu{
 	padding: .5em;
 	width: 20em;
 }
@@ -115,9 +115,10 @@ nav ul{
 	display: none;
 }
 
+$tan: #E6DD94;
 
 body{
-	background-color: #E6DD94;
+	background-color: $tan;
 	color: #4C3224;
 	font-family: 'Raleway';
 }
@@ -176,4 +177,3 @@ body{
   src: url(smashme.ttf);
   font-weight: bold;
 }
-*/

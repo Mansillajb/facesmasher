@@ -7,6 +7,10 @@ Router.route('/', {
 	name:"index"
 });
 
+Router.route('/login', {
+	name: 'login'
+});
+
 Router.route('/characterProfile/:_id', {
 	name:"characterProfile",
 	data:function(){

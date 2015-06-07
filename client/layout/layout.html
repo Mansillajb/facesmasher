@@ -1,59 +1,57 @@
 <template name="layout">
-	<nav class="navbar navbar-default" role="navigation"> <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">{{#if currentUser}}
-  <!-- currentUser is provided by the Accounts-Password package,
-  it's an object representing a user... 
-  it has username, email, profile, etc.. properties. -->
-  Welcome to {{currentUser.username}}'s
-  {{/if}} Face Smasher, Beard Trimmer</a>
+  <nav class="smash navbar navbar-default" role="navigation"> <div class="container-fluid">
+<!-- currentUser is provided by the Accounts-Password package,
+it's an object representing a user... 
+it has username, email, profile, etc.. properties. -->
+<ul>
+  <!-- Welcome message -->
+  <li>
+    <p>{{#if currentUser}} Welcome to {{currentUser.username}}'s {{/if}} Face Smasher, Beard Trimmer</p>
+  </li>      
+
+  <!-- logout -->
+  {{#if currentUser}}
+  <li>
+    <li><a href="" id="logout-btn" >Logout</a></li>
+  </li>
+  {{else}}
+
+  <!-- sigin -->
+  <li class="right">
+    <a href="{{pathFor 'login'}}" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Sign in<span class="caret"></span>
+    </a>
+  </li>
+
+  <!--
+  <li>
+    {{#if toggleLogin}}
+    <div>
+      {{>login}}
+      <li class="divider"></li>
+      <li><a href="" id="regDisplay">Register</a></li>
     </div>
+    {{/if}}
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
+    {{#if toggleRegister}}
+    <div>
+      {{>register}}
+      <li class="divider"></li>
+      <li><a href="" id="logDisplay">Login</a></li>
+    </div>
+    {{/if}}
+  </li>
+  {{/if}}
+  -->
+  {{/if}}
+</ul>
 
-      {{#if currentUser}}
-        <li><a href="" id="logout-btn" >Logout</a></li>
-      {{else}}
+</div><!-- /.container-fluid -->
+</nav>
+<div class="consoleLog"><h1>{{consoleLog}}</h1></div>
 
-      
-
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Sign in<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            {{#if toggleLogin}}
-            <div>
-              {{>login}}
-              <li class="divider"></li>
-              <li><a href="" id="regDisplay">Register</a></li>
-            </div>
-            {{/if}}
-
-            {{#if toggleRegister}}
-            <div>
-              {{>register}}
-              <li class="divider"></li>
-              <li><a href="" id="logDisplay">Login</a></li>
-            </div>
-            {{/if}}
-          </ul>
-        </li>
-      {{/if}}</ul>
-
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid --></nav>
-	<div class="consoleLog"><h1>{{consoleLog}}</h1></div>
-  <div class="container">
-		{{>yield}}
-	</div> <!-- end .container -->
+<div class="container">
+  {{>yield}}
+</div> <!-- end .container -->
 <div class="panel-footer">
   <div class="row">
     <div class="col-sm-12"><p>Created by: julioRonnieCliff.(espa~ol)</p></div>
