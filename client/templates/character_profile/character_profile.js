@@ -1,8 +1,12 @@
 Template.characterProfile.events({
 	"click table":function () {
 		
-		$("input").each(function () {
-			$(this).attr("value", 5);
+		$("input").each(function (i, elem) {
+			if( i % 3 == 0 ) {
+				var random = 3 + Math.floor( Math.random() * 15 );
+				$(this).attr("value",  random);	
+			}
+			
 		});
 	},
 	"click #saveCharacter":function (event, template){
