@@ -1,3 +1,8 @@
+$tan: #FFF9C7;
+$darktan: #E6DD94;
+$brown: #4C3224;
+$darkbrown: #3C2517;
+
 .dropdown-menu{
 	padding: .5em;
 	width: 20em;
@@ -41,19 +46,33 @@ a:hover {
 	font-size: 1.5em;
 }
 
+
+.third{
+	width: 30%;
+	float: left;
+}
+
+.row{
+	overflow:hidden;
+}
+
 .character{
-	background-color: black;
+	background-color: $brown;
+	color: $tan;
 	padding: 5px;
 	text-align: center;
 	margin-top: 20px;
 	transition: background-color .5s;
 	transition: color .5s;
+	padding: 1.4em 0;
+	font-size: 1.2em;
+
 
 }
 
 .character:hover {
-	color: black;
-	background-color: green;
+	color: $darktan;
+	background-color: $darkbrown;
 	cursor: pointer;
 }
 
@@ -68,8 +87,8 @@ a:hover {
 }
 
 .panel-footer:hover{
-	background-color: green;
-	color: black;
+	background-color: $darktan;
+	color: $brown;
 	font-style: bold;
 	font-size: 2em;
 	letter-spacing: .8em;
@@ -82,10 +101,10 @@ a:hover {
 nav{
 	background-color: #351F12;
 	color: white;
-	padding: .2em 1em;
-	font-size: 2.5em;
+	padding: .5em 1em;
+	font-size: 1.5em;
 	font-weight: normal;
-
+	font-family: "book";
 	text-align: center;
 
 
@@ -115,12 +134,23 @@ nav ul{
 	display: none;
 }
 
-$tan: #E6DD94;
 
 body{
 	background-color: $tan;
 	color: #4C3224;
-	font-family: 'Raleway';
+	font-family: "book";
+}
+
+input{
+	background-color: #A02618;
+	color: white !important;
+
+}
+input:-webkit-autofill {
+	color: white;
+
+	//this is actually background color on autofills
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
 }
 
 .smash{
@@ -130,6 +160,9 @@ body{
 
 
 .form-signin{
+	border: 1px solid $brown;
+	box-shadow: 2px 2px 8px $darkbrown; 
+	padding: 0 0 2em 0; 
 	width: 50%;
 	margin: 0 auto;
 	font-size: 1.5em;
@@ -137,15 +170,16 @@ body{
 
 
 .form-signin input{
-	font-family: 'Raleway';
-	width: 70%;
-	font-size: inherit;
-	margin: 0 auto;
-	display: block;
-	margin-bottom: .5em;
-	font-size: .9em;
-	padding: .5em;
-	border: none;
+	font-family: 	'Raleway';
+	width: 			70%;
+	font-size: 		inherit;
+	margin: 		0 auto;
+	display: 		block;
+	margin-bottom: 	.5em;
+	font-size: 		.9em;
+	padding: 		.5em;
+	border: 		none;
+	color: 			white;
 }
 
 .title{
@@ -176,4 +210,9 @@ body{
   font-family: 'smashme';
   src: url(smashme.ttf);
   font-weight: bold;
+}
+
+@font-face {
+  font-family: 'book';
+  src: url(book.ttf);
 }

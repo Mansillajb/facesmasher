@@ -1,26 +1,26 @@
 <template name="layout">
-  <nav class="smash navbar navbar-default" role="navigation"> <div class="container-fluid">
-<!-- currentUser is provided by the Accounts-Password package,
-it's an object representing a user... 
-it has username, email, profile, etc.. properties. -->
-<ul>
-  <!-- Welcome message -->
-  <li>
-    <p>{{#if currentUser}} Welcome to {{currentUser.username}}'s {{/if}} Face Smasher, Beard Trimmer</p>
-  </li>      
+  <nav class="navbar navbar-default" role="navigation"> <div class="container-fluid">
+    <!-- currentUser is provided by the Accounts-Password package,
+    it's an object representing a user... 
+    it has username, email, profile, etc.. properties. -->
+    <ul>
+      <!-- Welcome message -->
+      <li>
+        <p>{{#if currentUser}} Welcome to {{currentUser.username}}'s {{/if}} Face Smasher, Beard Trimmer</p>
+      </li>      
 
-  <!-- logout -->
-  {{#if currentUser}}
-  <li>
-    <li><a href="" id="logout-btn" >Logout</a></li>
-  </li>
-  {{else}}
+      <!-- logout -->
+      {{#if currentUser}}
+      <li class="right">
+        <a href="" id="logout-btn" >Logout</a>
+      </li>
+      {{else}}
 
-  <!-- sigin -->
-  <li class="right">
-    <a href="{{pathFor 'login'}}" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Sign in<span class="caret"></span>
-    </a>
-  </li>
+      <!-- sigin -->
+      <li class="right">
+        <a href="{{pathFor 'login'}}" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Sign in<span class="caret"></span>
+        </a>
+      </li>
 
   <!--
   <li>
@@ -43,18 +43,22 @@ it has username, email, profile, etc.. properties. -->
   {{/if}}
   -->
   {{/if}}
-</ul>
+  </ul>
 
-</div><!-- /.container-fluid -->
+  </div><!-- /.container-fluid -->
 </nav>
-<div class="consoleLog"><h1>{{consoleLog}}</h1></div>
 
+<div class="consoleLog"><h1 class="title">{{consoleLog}}</h1></div>
+
+<!-- container -->
 <div class="container">
   {{>yield}}
 </div> <!-- end .container -->
+
 <div class="panel-footer">
   <div class="row">
     <div class="col-sm-12"><p>Created by: julioRonnieCliff.(espa~ol)</p></div>
   </div>
 </div>
+
 </template>
