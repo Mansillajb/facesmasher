@@ -6,13 +6,16 @@
     <ul>
       <!-- Welcome message -->
       <li>
-        <p>{{#if currentUser}} Welcome to {{currentUser.username}}'s {{/if}} Face Smasher, Beard Trimmer</p>
+        <a href="{{pathFor 'index'}}">{{#if currentUser}} {{currentUser.username}}'s {{/if}} Face Smasher</a>
       </li>      
 
       <!-- logout -->
       {{#if currentUser}}
       <li class="right">
         <a href="" id="logout-btn" >Logout</a>
+      </li>
+      <li class="right">
+        <a href="{{pathFor 'characters'}}" id="characters" >Characters</a>
       </li>
       {{else}}
 
