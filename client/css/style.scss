@@ -3,6 +3,9 @@ $darktan: #E6DD94;
 $brown: #4C3224;
 $darkbrown: #3C2517;
 $red: #A02618;
+*{
+	box-sizing: border-box;
+}
 
 .dropdown-menu{
 	padding: .5em;
@@ -54,7 +57,8 @@ a:hover {
 }
 
 .row{
-	overflow:hidden;
+	position: relative;
+	// overflow:hidden;
 }
 
 .character{
@@ -169,7 +173,7 @@ input:-webkit-autofill {
 }
 
 #add-char input{
-	width: 30% ;
+	width: 32% ;
 	margin-right: 1%;
 	float: left; 
 	padding: 1em;
@@ -223,6 +227,22 @@ input{
 	padding: .3em; 
 }
 
+#new-char-btn{
+	background-color: $red;
+	color: $tan;
+	font-family: 'Verdana';
+	padding: .005em .3em;
+	border: none;
+	border-radius: 50%;
+	box-shadow: 2px 2px 8px $darkbrown;
+	cursor: pointer;
+	
+	position: absolute;
+		right: -.5em;
+		top: 	.15em;
+	
+	font-size: 2em;
+}
 @font-face {
   font-family: 'smashme';
   src: url(smashme.ttf);

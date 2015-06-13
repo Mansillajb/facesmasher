@@ -1,30 +1,40 @@
 <template name="characters"> 
-	<div class="row">
-		<form id="add-char">
-			<div class="col-md-4">
-				<input type="text" id="character-name" class="form-control col-md-4" placeholder="Character Name" required autofocus>
-			</div>
-			<div class="col-md-4">
-				<input type="text" id="character-class" class="form-control col-md-4" placeholder="Character Class" >
-			</div>
-			<div class="col-md-4"><input type="text" id="character-race" class="form-control col-md-4" placeholder="Character Race" ></div>
-		</form> 
-	</div> <!-- end of .row -->
-	<div class="row">
-			<div class="col-md-4"></div>
-			<div class="col-md-4"><button class="btn btn-sm btn-primary btn-block" id="save-btn" type="submit">Save Character</button>
-			</div>
-			<div class="col-md-4"></div>
-			</div>
-		{{#each characters}}
-		<div class="row character">
-			{{> character}}
-		</div>
-		{{/each}}
+<!--
+<div class="row">
+<form id="add-char">
+<div class="col-md-4">
+<input type="text" id="character-name" class="form-control col-md-4" placeholder="Character Name" required autofocus>
+</div>
+<div class="col-md-4">
+<input type="text" id="character-class" class="form-control col-md-4" placeholder="Character Class" >
+</div>
+<div class="col-md-4"><input type="text" id="character-race" class="form-control col-md-4" placeholder="Character Race" ></div>
+</form> 
+</div> 
+
+<div class="row">
+<div class="col-md-4"></div>
+<div class="col-md-4"><button class="btn btn-sm btn-primary btn-block" id="save-btn" type="submit">Save Character</button>
+</div>
+<div class="col-md-4"></div>
+</div>
+ -->
+<div class="row character">
+	<div class="third"><h3>input</h3></div>
+	<div class="third"></div>
+	<div class="third"></div>
+	<button id="new-char-btn"><h3>+</h3></button>
+</div>
+
+{{#each characters}}
+<div class="row character">
+	{{> character}}
+</div>
+{{/each}}
 
 </template>
-<template name ="character"> 
 
+<template name ="character"> 
 	<div class="third"><h3>Character Name: {{name}}</h3></div>
 	<div class="third"><h3>Class: {{class}}</h3></div>
 	<div class="third"><h3>Race: {{race}}</h3></div>
