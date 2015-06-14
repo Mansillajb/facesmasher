@@ -3,8 +3,25 @@ $darktan: #E6DD94;
 $brown: #4C3224;
 $darkbrown: #3C2517;
 $red: #A02618;
-*{
-	box-sizing: border-box;
+
+
+#ability-scores{
+	// padding: 1em;
+	// margin: 1em;
+	.little-box {
+		width: 17.58%;
+		display: inline-block;
+		label{
+			display:block;
+			width: 100%;
+			color:$red;
+			font-size: .5em;
+		}
+		span{
+			display: block;
+		}
+
+	}
 }
 
 .dropdown-menu{
@@ -14,7 +31,10 @@ $red: #A02618;
 .container {
 	width: 80%;
 }
-
+.ability-box{
+display:inline-block;
+width:29%;
+}
 input{
 	background-color: rgb(250, 255, 189) !important;
 }
@@ -115,6 +135,9 @@ nav{
 
 	-webkit-text-stroke-width: 1px;
    	-webkit-text-stroke-color: #C29669;
+   	li{
+   		padding: .1em;
+   	}
 
 }
 nav ul li{
@@ -243,6 +266,8 @@ input{
 	
 	font-size: 2em;
 }
+
+
 @font-face {
   font-family: 'smashme';
   src: url(smashme.ttf);
