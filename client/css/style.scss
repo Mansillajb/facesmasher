@@ -6,19 +6,57 @@ $red: #A02618;
 
 
 #ability-scores{
-	// padding: 1em;
-	// margin: 1em;
+	overflow: hidden;
+
+	.little-box:first-child{
+			background-color: $brown;
+			color: $tan;
+		}
+
+	.little-box:nth-child(3), .little-box:nth-child(5){
+			background-color: $tan;
+			color: $darkbrown;
+			border: $red 1px solid;
+		}
+
 	.little-box {
-		width: 17.58%;
+		// border: black 1px solid;
+		min-height: 60px;
+		min-width: 60px;
+		overflow: hidden;
+		text-align: center;
+		outline: none;
+		position: relative;
+		width: 19%;
 		display: inline-block;
+		padding: 0;
+		background-color: white;
+		box-shadow: 2px 2px 8px black;
+
 		label{
 			display:block;
 			width: 100%;
-			color:$red;
-			font-size: .5em;
+			background-color: $darkbrown;
+			color:$tan;
+			font-size: .7em;
+			position: absolute;
+			text-align: center;
+			bottom: 0;
 		}
 		span{
+			font-size: 1.8em;
+			margin-top: 20%;
 			display: block;
+
+		}
+		input{
+			background-color: white;
+			overflow: hidden;
+			outline: none;
+			font-size: 1.8em;
+			padding: 0;
+			text-align: center;
+			margin-top: 10%;
 		}
 
 	}
@@ -31,9 +69,15 @@ $red: #A02618;
 .container {
 	width: 80%;
 }
+
+.row:last-child{
+	margin-bottom: 300px;
+}
+
 .ability-box{
 display:inline-block;
-width:29%;
+width:400px;
+min-width:400px;
 }
 input{
 	background-color: rgb(250, 255, 189) !important;
@@ -61,7 +105,7 @@ a {
 	transition: color .7s;
 }
 a:hover {
-	color: black;
+	color: $red;
 }
 #ability-scores input{
 	width: 2em;
@@ -125,7 +169,7 @@ a:hover {
 }
 nav{
 	background-color: #351F12;
-	color: white;
+	color: $tan;
 	padding: .5em 1em;
 	font-size: 1.5em;
 	font-weight: normal;
@@ -171,6 +215,7 @@ body{
 
 input{
 	background-color: #A02618;
+	padding: 0;
 
 }
 input:-webkit-autofill {
@@ -299,4 +344,15 @@ input{
   	width: 99%;
   }
 
+}
+
+#reg-link{
+	color: green;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+.form-signin{
+	position: relative;
 }
